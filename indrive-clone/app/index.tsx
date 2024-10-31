@@ -12,7 +12,7 @@ const Home = () => {
 
     useEffect(() => {
         (async () => {
-            let {status} = await Location.requestBackgroundPermissionsAsync();
+            let {status} = await Location.requestForegroundPermissionsAsync();
             if(status !== 'granted') {
                 setErrorMsg('Permission to access location was denied');
                 return;
@@ -46,8 +46,5 @@ const Home = () => {
 }
 
 export default Home
-
-
-
 
 
