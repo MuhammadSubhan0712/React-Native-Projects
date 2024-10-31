@@ -2,11 +2,9 @@ import React from "react";
 import {
   View,
   Text,
-  StyleSheet,
-  TouchableOpacity,
   ScrollView,
 } from "react-native";
-// import { LinearGradient } from 'expo-linear-gradient';
+
 
 const Home = () => {
   return (
@@ -66,10 +64,3 @@ const Home = () => {
 
 export default Home;
 
-// const styles = StyleSheet.create({
-//   gradient: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-// });
