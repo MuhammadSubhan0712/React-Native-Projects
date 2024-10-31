@@ -1,4 +1,3 @@
-import { Link } from "expo-router";
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 // import { LinearGradient } from 'expo-linear-gradient';
@@ -55,14 +54,7 @@ const Home = () => {
         </Text>
       </View>
 
-     <View className="mt-9 mb-5 justify-center items-center">
-     <Link href={'Maps'}>
-      <TouchableOpacity className="text-xl bg-yellow-500 text-red-600 font-bold p-3 border-green-200 rounded-lg shadow-xl shadow-red-600">
-        View Map
-      </TouchableOpacity>
-     </Link>
-     </View>
-    </View>
+    
     </ScrollView>
 
   );
