@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput, Text, TouchableOpacity, View } from 'react-native';
+import { TextInput, Text, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Link } from 'expo-router';
@@ -12,6 +12,11 @@ const Login = () => {
     <SafeAreaProvider>
       <LinearGradient colors={['#6af913', '#0ebb00']} className="flex-1 items-center justify-center">
         <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
+        <Image
+        source={require('/')}
+        />
+        
+    
           <Text className="text-center text-2xl font-bold text-green-700 mb-6 shadow-md shadow-green-400">
            Login
           </Text>
