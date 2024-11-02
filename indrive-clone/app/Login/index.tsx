@@ -12,7 +12,7 @@ const Login = () => {
     <SafeAreaProvider>
       <LinearGradient colors={['#6af913', '#0ebb00']} className="flex-1 items-center justify-center">
         <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
-          <Text className="text-center text-2xl font-bold text-green-500 mb-6 shadow-md shadow-blue-300">
+          <Text className="text-center text-2xl font-bold text-green-700 mb-6 shadow-md shadow-green-400">
            Login
           </Text>
           
@@ -34,7 +34,7 @@ const Login = () => {
             secureTextEntry
           />
 
-          <TouchableOpacity className="bg-green-400 mt-4 py-2 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
+          <TouchableOpacity className="bg-green-600 mt-4 py-2 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
             <Text className="text-lg font-semibold text-white text-center">Log In</Text>
           </TouchableOpacity>
 

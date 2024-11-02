@@ -11,9 +11,9 @@ const Login = () => {
 
   return (
     <SafeAreaProvider>
-      <LinearGradient colors={['#13c72', '#2a298']} className="flex-1 items-center justify-center">
+      <LinearGradient colors={['#6af913', '#0ebb00']} className="flex-1 items-center justify-center">
         <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
-          <Text className="text-center text-2xl font-bold text-green-500 mb-6 shadow-md shadow-blue-300">
+          <Text className="text-center text-2xl font-bold text-green-500 mb-6 shadow-md shadow-green-400">
            Sign Up
           </Text>
 
@@ -37,7 +37,7 @@ const Login = () => {
             className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setPassword}
             value={password}
-            placeholder="Password"
+            placeholder="*****************"
             placeholderTextColor="#aaa"
             secureTextEntry
           />
@@ -48,7 +48,7 @@ const Login = () => {
 
           <Link href={'/Login'} className='mt-4  py-3  hover:text-cyan-300'>
           <Text className='text-lg font-bold text-cyan-700 text-center'>
-          Don't have an account
+          Already have a account
           </Text>
           </Link>
         </SafeAreaView>
