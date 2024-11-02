@@ -10,7 +10,7 @@ const Login = () => {
 
   return (
     <SafeAreaProvider>
-      <LinearGradient colors={['#13c72', '#2a298']} className="flex-1 items-center justify-center">
+      <LinearGradient colors={['#6af913', '#0ebb00']} className="flex-1 items-center justify-center">
         <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
           <Text className="text-center text-2xl font-bold text-green-500 mb-6 shadow-md shadow-blue-300">
            Login
