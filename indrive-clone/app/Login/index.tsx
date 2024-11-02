@@ -12,8 +12,8 @@ const Login = () => {
     <SafeAreaProvider>
       <LinearGradient colors={['#6af913', '#0ebb00']} className="flex-1 items-center justify-center">
         <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
-        <Image
-        source={require('/')}
+        <Image className='h-1 w-1 rounded-lg'
+        source={require('')}
         />
         
     
