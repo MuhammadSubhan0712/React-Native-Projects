@@ -15,14 +15,13 @@ const Login = () => {
           <Text className="text-center text-2xl font-bold text-green-500 mb-6 shadow-md shadow-blue-300">
            Sign Up
           </Text>
-          
+
           <TextInput
             className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
-            onChangeText={setEmail}
-            value={email}
-            placeholder="Enter your Email"
+            onChangeText={setUsername}
+            value={username}
+            placeholder="Username"
             placeholderTextColor="#aaa"
-            keyboardType="email-address"
           />
           <TextInput
             className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
