@@ -4,7 +4,7 @@ import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
 
 const Login = () => {
   
-    const [text, onChangeText] = React.useState('Useless Text');
+const [text, onChangeText] = React.useState('');
   const [email , setEmail] = useState('');
   const [password , setPassword] = useState('');
 
