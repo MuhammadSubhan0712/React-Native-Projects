@@ -34,12 +34,12 @@ const Login = () => {
             secureTextEntry
           />
 
-          <TouchableOpacity className="bg-green-500 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
+          <TouchableOpacity className="bg-green-400 mt-4 py-2 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
             <Text className="text-lg font-semibold text-white text-center">Log In</Text>
           </TouchableOpacity>
 
-          <Link href={'/Register'}>
-          <Text className='bg-cyan-500 mt-4 py-3 rounded-lg shadow-lg shadow-cyan-900 active:bg-cyan-700'>
+          <Link href={'/Register'} className='mt-4  py-3  hover:text-cyan-300'>
+          <Text className='text-lg font-bold text-cyan-700 text-center'>
           Don't have an account
           </Text>
           </Link>

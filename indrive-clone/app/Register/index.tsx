@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TextInput, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Link } from 'expo-router';
 
 const Login = () => {
   const [username , setUsername] = useState('');
@@ -41,9 +42,15 @@ const Login = () => {
             secureTextEntry
           />
 
-          <TouchableOpacity className="bg-blue-500 mt-4 py-3 rounded-lg shadow-lg shadow-blue-900 active:bg-blue-700">
+          <TouchableOpacity className="bg-green-500 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
             <Text className="text-lg font-semibold text-white text-center">Sign Up</Text>
           </TouchableOpacity>
+
+          <Link href={'/Login'} className='mt-4  py-3  hover:text-cyan-300'>
+          <Text className='text-lg font-bold text-cyan-700 text-center'>
+          Don't have an account
+          </Text>
+          </Link>
         </SafeAreaView>
       </LinearGradient>
     </SafeAreaProvider>
