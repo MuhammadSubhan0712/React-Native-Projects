@@ -42,7 +42,7 @@ const Login = () => {
           />
 
           <TouchableOpacity className="bg-blue-500 mt-4 py-3 rounded-lg shadow-lg shadow-blue-900 active:bg-blue-700">
-            <Text className="text-lg font-semibold text-white text-center">Log In</Text>
+            <Text className="text-lg font-semibold text-white text-center">Sign Up</Text>
           </TouchableOpacity>
         </SafeAreaView>
       </LinearGradient>
