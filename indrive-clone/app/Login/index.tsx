@@ -11,7 +11,7 @@ const Login = () => {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView className='flex justify-center items-center'>
+      <SafeAreaView className='flex justify-center items-center bg-slate-400 w-96'>
      
         <TextInput
           className=''
