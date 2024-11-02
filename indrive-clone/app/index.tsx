@@ -49,12 +49,16 @@
 
 import { View, Text } from 'react-native'
 import React from 'react'
+import Login from './Login'
 
 const Home = () => {
   return (
+    
     <View>
-      <Text className='text-neutral-500 bg-red-100 '>Home</Text>
+    <Login/>
     </View>
+
+
   )
 }
 
