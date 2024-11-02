@@ -2,8 +2,6 @@ import { View, Text  } from 'react-native'
 import React, { useEffect, useState } from 'react'
 
 import MapView from 'react-native-maps';
-
-
 import * as Location from 'expo-location';
 
 const Home = () => {
