@@ -1,42 +1,54 @@
 import React, { useState } from 'react';
-import {StyleSheet, TextInput} from 'react-native';
-import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+import { TextInput, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Login = () => {
-  
-const [text, onChangeText] = React.useState('');
-  const [email , setEmail] = useState('');
-  const [password , setPassword] = useState('');
-
+  const [username , setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView className='flex justify-center items-center bg-slate-400 w-96'>
-    
-      <TextInput
-          className=''
-        //   onChangeText={onChangeNumber}
-          value={text}
-          placeholder="Enter Full Name"
-        /> 
-       
-        <TextInput
-          className=''
-        //   onChangeText={onChangeNumber}
-          value={email}
-          placeholder="Enter your Email"
-          keyboardType="email-address"
-        />
-        <TextInput 
-          className=''
-        //   onChangeText={onChangeNumber}
-          value={password}
-          placeholder="****************"
-          secureTextEntry={true}
-        />
-      </SafeAreaView>
+      <LinearGradient colors={['#13c72', '#2a298']} className="flex-1 items-center justify-center">
+        <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
+          <Text className="text-center text-2xl font-bold text-green-500 mb-6 shadow-md shadow-blue-300">
+           Sign Up
+          </Text>
+          
+          <TextInput
+            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            onChangeText={setEmail}
+            value={email}
+            placeholder="Enter your Email"
+            placeholderTextColor="#aaa"
+            keyboardType="email-address"
+          />
+          <TextInput
+            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            onChangeText={setEmail}
+            value={email}
+            placeholder="Enter your Email"
+            placeholderTextColor="#aaa"
+            keyboardType="email-address"
+          />
+          
+          <TextInput
+            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            onChangeText={setPassword}
+            value={password}
+            placeholder="Password"
+            placeholderTextColor="#aaa"
+            secureTextEntry
+          />
+
+          <TouchableOpacity className="bg-blue-500 mt-4 py-3 rounded-lg shadow-lg shadow-blue-900 active:bg-blue-700">
+            <Text className="text-lg font-semibold text-white text-center">Log In</Text>
+          </TouchableOpacity>
+        </SafeAreaView>
+      </LinearGradient>
     </SafeAreaProvider>
   );
 };
 
-export default Login
+export default Login;

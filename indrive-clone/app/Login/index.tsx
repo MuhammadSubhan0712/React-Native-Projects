@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, Text, TouchableOpacity, View } from 'react-native';
+import { TextInput, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -9,30 +9,32 @@ const Login = () => {
 
   return (
     <SafeAreaProvider>
-      <LinearGradient colors={['#1e3c72', '#2a5298']} style={styles.background}>
-        <SafeAreaView style={styles.container}>
-          <Text style={styles.title}>Welcome Back!</Text>
+      <LinearGradient colors={['#13c72', '#2a298']} className="flex-1 items-center justify-center">
+        <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
+          <Text className="text-center text-2xl font-bold text-green-500 mb-6 shadow-md shadow-blue-300">
+           Login
+          </Text>
           
           <TextInput
-            style={styles.input}
-            onChangeText={(text) => setEmail(text)}
+            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            onChangeText={setEmail}
             value={email}
             placeholder="Enter your Email"
+            placeholderTextColor="#aaa"
             keyboardType="email-address"
-            placeholderTextColor="#ddd"
           />
           
           <TextInput
-            style={styles.input}
-            onChangeText={(text) => setPassword(text)}
+            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            onChangeText={setPassword}
             value={password}
             placeholder="Password"
-            secureTextEntry={true}
-            placeholderTextColor="#ddd"
+            placeholderTextColor="#aaa"
+            secureTextEntry
           />
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Log In</Text>
+          <TouchableOpacity className="bg-blue-500 mt-4 py-3 rounded-lg shadow-lg shadow-blue-900 active:bg-blue-700">
+            <Text className="text-lg font-semibold text-white text-center">Log In</Text>
           </TouchableOpacity>
         </SafeAreaView>
       </LinearGradient>
@@ -41,65 +43,3 @@ const Login = () => {
 };
 
 export default Login;
-
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  container: {
-    width: '90%',
-    backgroundColor: '#ffffff',
-    borderRadius: 25,
-    padding: 20,
-    shadowColor: '#000',
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 0.5,
-    shadowRadius: 8,
-    elevation: 10,
-    transform: [{ perspective: 1000 }],
-    borderWidth: 1,
-    borderColor: '#ddd',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#2a5298',
-    marginBottom: 20,
-    textAlign: 'center',
-    textShadowColor: '#8b9dc3',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 5,
-  },
-  input: {
-    height: 50,
-    borderColor: '#ddd',
-    borderWidth: 1,
-    borderRadius: 15,
-    marginBottom: 20,
-    paddingHorizontal: 10,
-    backgroundColor: '#f0f4f8',
-    shadowColor: '#333',
-    shadowOffset: { width: -2, height: -2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    fontSize: 16,
-  },
-  button: {
-    backgroundColor: '#4c8ed9',
-    paddingVertical: 15,
-    borderRadius: 15,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 5,
-  },
-  buttonText: {
-    fontSize: 18,
-    color: '#fff',
-    fontWeight: 'bold',
-  },
-});
