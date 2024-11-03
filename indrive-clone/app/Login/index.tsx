@@ -29,7 +29,7 @@ const Login = () => {
            
                 {/* Email Input */}
           <TextInput
-            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setEmail}
             value={email}
             placeholder="Enter your Email"
@@ -40,7 +40,7 @@ const Login = () => {
                 {/* Password Input */}
 
           <TextInput
-            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setPassword}
             value={password}
             placeholder="************************"

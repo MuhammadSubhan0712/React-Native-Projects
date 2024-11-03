@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput, Text, TouchableOpacity, View , Image} from 'react-native';
+import { TextInput, Text, TouchableOpacity, View , Image, ScrollView} from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { LinearGradient } from 'expo-linear-gradient';
 import { launchImageLibrary } from 'react-native-image-picker';
@@ -35,6 +35,7 @@ const selectImage = () => {
 };
 
   return (
+    <ScrollView>
     <SafeAreaProvider>
       <LinearGradient colors={['#abfe05', '#00db24']} className="flex-1 items-center justify-center">
         <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
@@ -51,16 +52,16 @@ const selectImage = () => {
           <Text className="text-center py-3 text-2xl font-bold text-green-700 mb-6 shadow-md shadow-green-400">
            Sign Up
           </Text>
-
+          
           <TextInput
-            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setUsername}
             value={username}
             placeholder="Username"
             placeholderTextColor="#aaa"
           />
           <TextInput
-            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setEmail}
             value={email}
             placeholder="Enter your Email"
@@ -69,21 +70,22 @@ const selectImage = () => {
           />
           
           <TextInput
-            className="h-12 px-4 rounded-lg bg-gray-200 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+            className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setPassword}
             value={password}
             placeholder="*****************"
             placeholderTextColor="#aaa"
             secureTextEntry
           />
-          
+
    {imageUri ? (
-        <Image source={{ uri: imageUri }} style={{ width: 100, height: 100, borderRadius: 50 }} />
+        <Image source={{ uri: imageUri }} style={{ marginTop:10 ,width: 100, height: 100, borderRadius: 0 }} />
       ) : (
         <TouchableOpacity onPress={selectImage}>
-          <View style={{ width: 100, height: 100, borderRadius: 50, backgroundColor: 'grey', justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={{ color: 'white' }}>Upload Image</Text>
+          <View style={{ marginTop:10 , width: 100, height: 100, borderRadius: 50, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center' }}>
+            <Text style={{ color: 'white', fontWeight: 'bold' }}>Upload Your Image</Text>
           </View>
+
         </TouchableOpacity>
       )}
 
@@ -99,6 +101,8 @@ const selectImage = () => {
         </SafeAreaView>
       </LinearGradient>
     </SafeAreaProvider>
+    </ScrollView>
+
   );
 };
 
