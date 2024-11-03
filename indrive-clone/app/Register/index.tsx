@@ -74,7 +74,7 @@ const selectImage = () => {
           />
           
 
-          {/* Input Username */}
+          {/* Input Password */}
 
           <TextInput
             className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
