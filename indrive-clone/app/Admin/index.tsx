@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+// import { View, Text } from 'react-native'
+// import React from 'react'
 
-const AdminPanel = () => {
-  return (
-    <View>
-      <Text>AdminPanel</Text>
-    </View>
-  )
-}
+// const AdminPanel = () => {
+//   return (
+//     <View>
+//       <Text>AdminPanel</Text>
+//     </View>
+//   )
+// }
 
-export default AdminPanel
+// export default AdminPanel
