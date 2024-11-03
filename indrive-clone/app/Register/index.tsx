@@ -53,6 +53,7 @@ const selectImage = () => {
            Sign Up
           </Text>
           
+          {/* Input Username */}
           <TextInput
             className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setUsername}
@@ -60,6 +61,9 @@ const selectImage = () => {
             placeholder="Username"
             placeholderTextColor="#aaa"
           />
+
+          {/* Input Username */}
+
           <TextInput
             className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setEmail}
@@ -69,6 +73,9 @@ const selectImage = () => {
             keyboardType="email-address"
           />
           
+
+          {/* Input Username */}
+
           <TextInput
             className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
             onChangeText={setPassword}
@@ -77,6 +84,9 @@ const selectImage = () => {
             placeholderTextColor="#aaa"
             secureTextEntry
           />
+
+
+          {/* Input User Image */}
 
    {imageUri ? (
         <Image source={{ uri: imageUri }} style={{ marginTop:10 ,width: 100, height: 100, borderRadius: 0 }} />
