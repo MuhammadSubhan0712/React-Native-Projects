@@ -20,7 +20,7 @@ const AdminPanel = () => {
   
   
 
-  const Item = ({ title, imageUrl }) => (
+  const Item = ({ title, imageUrl }:items)  => (
     <View className="bg-purple-500 my-3 items-center mx-6 p-4 border rounded-3xl shadow-lg border-purple-900">
       <Image source={{ uri: imageUrl }} className="h-20 w-20 mb-2 rounded-full" />
       <Text className="text-xl text-white font-bold">{title}</Text>
