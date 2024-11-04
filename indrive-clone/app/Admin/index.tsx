@@ -14,22 +14,22 @@ const AdminPanel = () => {
         },
         {
           id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-          title: 'Driver',
+          title: 'Customer',
         },
       ];
 
       type ItemProps = {title: string};
 
       const Item = ({title}: ItemProps) => (
-        <View className='bg-slate-600 my-3 mx-6 p-2'>
-          <Text className='text-3xl'>{title}</Text>
+        <View className='bg-slate-600 my-3 items-center mx-6 p-3 border rounded-lg border-l-purple-950 '>
+          <Text className='text-2xl text-zinc-50 '>{title}</Text>
         </View>
       );
   return (
     <ScrollView>
     <SafeAreaProvider>
     <SafeAreaView className='flex mt-2'>
-    <Link href={''}>
+    <Link href={'/Login'}>
       <FlatList
         data={DATA}
         renderItem={({item}) => <Item title={item.title} />}
