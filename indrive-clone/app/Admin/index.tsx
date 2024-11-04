@@ -41,14 +41,5 @@ const AdminPanel = () => {
   </ScrollView>
 
 );
-
-const styles = StyleSheet.create({
-  container: 
-  title: {
-    fontSize: 32,
-  },
-});
-  )
 }
-
 export default AdminPanel
