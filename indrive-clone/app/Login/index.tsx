@@ -61,7 +61,7 @@ const ToAdmin = () => {
             </Text>
           </TouchableOpacity>
 
-          <Link href={"/Register"} className="mt-4  py-3  hover:text-cyan-300">
+          <Link href={"/Register"} className="mt-4  py-3 hover:text-cyan-300">
             <Text className="text-lg font-bold text-cyan-700 text-center">
               Don't have an account
             </Text>
