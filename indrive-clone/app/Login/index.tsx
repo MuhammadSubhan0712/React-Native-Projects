@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { TextInput, Text, TouchableOpacity, Image, View } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import { Link } from "expo-router";
+import { Link, useNavigation } from "expo-router";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigation;
 
+const ToAdmin = () => {
+  navigate('../Admin')
+}
   return (
     <SafeAreaProvider>
       <LinearGradient
@@ -52,7 +56,7 @@ const Login = () => {
           {/* Login Button */}
 
           <TouchableOpacity className="bg-green-600 mt-4 py-2 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
-            <Text className="text-lg font-semibold text-white text-center">
+            <Text className="text-lg font-semibold text-black text-center">
               Log In
             </Text>
           </TouchableOpacity>
