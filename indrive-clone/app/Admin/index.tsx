@@ -5,23 +5,22 @@ import { Link } from 'expo-router';
 
 const AdminPanel = () => {
   const DATA = [
-    { id: '1', title: 'Driver Management', imageUrl: 'https://via.placeholder.com/100' },
-    { id: '2', title: 'Customer Profiles', imageUrl: 'https://via.placeholder.com/100' },
-    { id: '3', title: 'Trip Management', imageUrl: 'https://via.placeholder.com/100' },
-    { id: '4', title: 'Reports & Analytics', imageUrl: 'https://via.placeholder.com/100' },
+    { id: '1', title: 'Driver Management', imageUrl: 'https://img.freepik.com/premium-vector/driver-vector-logo-design_410429-4782.jpg?semt=ais_hybrid' },
+    { id: '2', title: 'Customer Profiles', imageUrl: 'https://cdn0.iconfinder.com/data/icons/design-and-usability/64/client_service_icon_staff_customer_support_user_profile-512.png' },
+    { id: '3', title: 'Trip Management', imageUrl: 'https://thumbs.dreamstime.com/b/car-logo-illustration-art-background-46721370.jpg' },
+    { id: '4', title: 'Reports & Analytics', imageUrl: 'https://cdn-icons-png.flaticon.com/512/1478/1478892.png' },
   ];
 
+//   interface define types:
   interface items {
     title : string , 
     id : number,
     imageUrl: string,
 
   }
-  
-  
 
   const Item = ({ title, imageUrl }:items)  => (
-    <View className="bg-purple-500 my-3 items-center mx-6 p-4 border rounded-3xl shadow-lg border-purple-900">
+    <View className="bg-cyan-700 my-3 items-center mx-6 p-4 border rounded-3xl shadow-lg border-purple-900">
       <Image source={{ uri: imageUrl }} className="h-20 w-20 mb-2 rounded-full" />
       <Text className="text-xl text-white font-bold">{title}</Text>
     </View>
@@ -30,19 +29,19 @@ const AdminPanel = () => {
   return (
     <ScrollView>
       <SafeAreaProvider>
-        <SafeAreaView className="flex-1 bg-gray-100">
+        <SafeAreaView className="flex-1 bg-zinc-50">
           {/* Header */}
           <View className="bg-gradient-to-r from-green-400 to-blue-500 p-6">
-            <Text className="text-3xl font-bold text-white text-center">Admin Dashboard</Text>
+            <Text className="text-3xl font-bold text-green-600 text-center">Dashboard</Text>
           </View>
 
           {/* Quick Stats */}
           <View className="flex-row justify-around mt-4 mb-6">
-            <View className="bg-blue-500 p-4 rounded-lg shadow-lg w-40">
+            <View className="bg-blue-900 p-4 rounded-lg shadow-lg w-40">
               <Text className="text-white text-lg">Total Drivers</Text>
               <Text className="text-white text-2xl font-bold">120</Text>
             </View>
-            <View className="bg-green-500 p-4 rounded-lg shadow-lg w-40">
+            <View className="bg-green-800 p-4 rounded-lg shadow-lg w-40">
               <Text className="text-white text-lg">Total Customers</Text>
               <Text className="text-white text-2xl font-bold">350</Text>
             </View>
@@ -55,6 +54,7 @@ const AdminPanel = () => {
             keyExtractor={(item) => item.id}
             contentContainerStyle={{ paddingBottom: 20 }}
           />
+
 
           {/* Footer */}
           <View className="bg-gray-200 p-4 mt-6 rounded-t-2xl shadow-md">
