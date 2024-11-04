@@ -45,7 +45,7 @@ const Login = () => {
     <ScrollView>
       <SafeAreaProvider>
         <LinearGradient
-          colors={["#abfe05", "#00db24"]}
+          colors={["#c1f11d", "#00db24"]}
           className="flex-1 items-center justify-center">
           <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
             <View className="flex items-center mt-2 mb-5">
@@ -96,6 +96,7 @@ const Login = () => {
 
             {imageUri ? (
               <Image
+              className='mt-3 w-full h-full border-r-0'
                 source={{ uri: imageUri }}
                 style={{
                   marginTop: 10,
@@ -106,7 +107,7 @@ const Login = () => {
               />
             ) : (
               <TouchableOpacity onPress={selectImage}>
-                <View
+                <View className='justify-center items-center bg-green-700 mt-3 w-full h-full border-r-50'
                   style={{
                     marginTop: 10,
                     width: 100,
@@ -116,7 +117,7 @@ const Login = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}>
-                  <Text style={{ color: "white", fontWeight: "bold" }}>
+                  <Text className='text-white font-bold'>
                     Upload Your Image
                   </Text>
                 </View>

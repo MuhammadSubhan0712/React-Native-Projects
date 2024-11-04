@@ -15,7 +15,7 @@ const ToAdmin = () => {
   return (
     <SafeAreaProvider>
       <LinearGradient
-        colors={["#abfe05", "#00db24"]}
+        colors={["#c1f11d", "#00db24"]}
         className="flex-1 items-center justify-center">
         <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
           {/* Logo for the Login Screen */}

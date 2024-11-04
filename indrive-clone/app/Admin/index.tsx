@@ -20,7 +20,7 @@ const AdminPanel = () => {
   }
 
   const Item = ({ title, imageUrl }:items)  => (
-    <View className="bg-cyan-700 my-3 items-center mx-6 p-4 border rounded-3xl shadow-lg border-purple-900">
+    <View className="bg-[#003fda] my-3 items-center mx-6 p-4 border rounded-3xl shadow-lg border-purple-900">
       <Image source={{ uri: imageUrl }} className="h-20 w-20 mb-2 rounded-full" />
       <Text className="text-xl text-white font-bold">{title}</Text>
     </View>
@@ -31,8 +31,8 @@ const AdminPanel = () => {
       <SafeAreaProvider>
         <SafeAreaView className="flex-1 bg-zinc-50">
           {/* Header */}
-          <View className="bg-gradient-to-r from-green-400 to-blue-500 p-6">
-            <Text className="text-3xl font-bold text-green-600 text-center">Dashboard</Text>
+          <View className="bg-[#c1f11d] p-6">
+            <Text className="text-3xl font-bold text-black text-center">Dashboard</Text>
           </View>
 
           {/* Quick Stats */}
