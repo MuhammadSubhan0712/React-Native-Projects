@@ -1,4 +1,6 @@
-import { View, Text, ScrollView, SafeAreaView, FlatList } from 'react-native'
+import { View, Text, ScrollView , FlatList } from 'react-native'
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+
 import React from 'react'
 
 const AdminPanel = () => {
