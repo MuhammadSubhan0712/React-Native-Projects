@@ -3,11 +3,24 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 
 import React from 'react'
 
+
 const AdminPanel = () => {
+
+    const DATA = [
+        {
+          id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+          Driver: 'First Item',
+        },
+        {
+          id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+          Customer: 'Second Item',
+        },
+      ];
+
   return (
     <ScrollView>
     <SafeAreaProvider>
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className='flex mt-2'>
       <FlatList
         data={DATA}
         renderItem={({item}) => <Item title={item.title} />}
