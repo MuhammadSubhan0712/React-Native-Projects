@@ -11,15 +11,21 @@ const Users = () => {
           {/* Header */}
           <View className="bg-[#c1f11d] p-6">
             <Text className="text-3xl font-bold text-black text-center">
-            Greetings and Welcome 😊 🚗 </Text>
+              Greetings and Welcome 😊 🚗{" "}
+            </Text>
           </View>
           <View className="bg-[#003fda] my-3 justify-center items-center mx- p-4 border rounded-3xl shadow-lg border-purple-900">
             <Link href={"../RegisterDriver"}>
-              <Text className="text-xl text-white font-bold">For Driver</Text>
+              <Text className="text-xl text-white font-bold">
+                Register For Driver
+              </Text>
             </Link>
-
+          </View>
+          <View className="bg-[#003fda] my-3 justify-center items-center mx- p-4 border rounded-3xl shadow-lg border-purple-900">
             <Link href={"../Register"}>
-              <Text className="text-xl text-white font-bold">For Passenger</Text>
+              <Text className="text-xl text-white font-bold">
+                Register For Passenger
+              </Text>
             </Link>
           </View>
         </SafeAreaView>

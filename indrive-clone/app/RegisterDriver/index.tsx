@@ -13,11 +13,12 @@ import { launchImageLibrary } from "react-native-image-picker";
 import { Link, useNavigation } from "expo-router";
 
 const RegisterDriver = () => {
+  const [drivername, setdrivername] = useState<string>("");
   const [username, setUsername] = useState<string>("");
   const [contact, setContact] = useState<number | null>(null);
   const [vehicleReg, setvehicleReg] = useState<string | null>(null);
   const [vehicleName, setvehicleName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");     
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [imageUri, setImageUri] = useState<string | null>(null);
 
@@ -68,9 +69,9 @@ const RegisterDriver = () => {
             {/* Input Username */}
             <TextInput
               className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
-              onChangeText={setUsername}
-              value={username}
-              placeholder="Username"
+              onChangeText={setdrivername}
+              value={drivername}
+              placeholder="Driver name"
               placeholderTextColor="#aaa"
             />
 
