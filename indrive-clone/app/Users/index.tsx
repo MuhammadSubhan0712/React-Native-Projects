@@ -11,8 +11,7 @@ const Users = () => {
           {/* Header */}
           <View className="bg-[#c1f11d] p-6">
             <Text className="text-3xl font-bold text-black text-center">
-              Welcome
-            </Text>
+            Greetings and Welcome 😊 🚗 </Text>
           </View>
           <View className="bg-[#003fda] my-3 justify-center items-center mx- p-4 border rounded-3xl shadow-lg border-purple-900">
             <Link href={"../RegisterDriver"}>
@@ -20,7 +19,7 @@ const Users = () => {
             </Link>
 
             <Link href={"../Register"}>
-              <Text className="text-xl text-white font-bold">For Customer</Text>
+              <Text className="text-xl text-white font-bold">For Passenger</Text>
             </Link>
           </View>
         </SafeAreaView>
