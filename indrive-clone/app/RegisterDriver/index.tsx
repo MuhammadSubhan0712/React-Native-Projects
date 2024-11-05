@@ -13,13 +13,15 @@ import { launchImageLibrary } from "react-native-image-picker";
 import { Link, useNavigation } from "expo-router";
 
 const RegisterDriver = () => {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState<string>("");
   const [contact, setContact] = useState<number | null>(null);
+  const [vehicleReg, setvehicleReg] = useState<number | null>(null);
+  const [vehicleName, setvehicleName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [imageUri, setImageUri] = useState<string | null>(null);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigation;
-  const [imageUri, setImageUri] = useState(null);
 
   const toLogin = () => {
     navigate("../Login");
@@ -95,8 +97,8 @@ const RegisterDriver = () => {
      {/* Input Vehicle Registration No */}
      <TextInput
               className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
-              onChangeText={setContact}
-              value={contact}
+              onChangeText={setvehicleReg}
+              value={vehicleReg}
               placeholder="Vehicle Registration No"
               placeholderTextColor="#aaa"
               keyboardType="text"
@@ -107,8 +109,8 @@ const RegisterDriver = () => {
             {/* Input Vehicle Name  */}
             <TextInput
               className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
-              onChangeText={setContact}
-              value={contact}
+              onChangeText={setvehicleName}
+              value={vehicleName}
               placeholder="Vehicle Name & Model"
               placeholderTextColor="#aaa"
               keyboardType="text"
