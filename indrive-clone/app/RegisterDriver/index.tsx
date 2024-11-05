@@ -91,6 +91,29 @@ const RegisterDriver = () => {
               keyboardType="number-pad"
             />
 
+
+     {/* Input Vehicle Registration No */}
+     <TextInput
+              className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+              onChangeText={setContact}
+              value={contact}
+              placeholder="Vehicle Registration No"
+              placeholderTextColor="#aaa"
+              keyboardType="text"
+            />
+
+
+
+            {/* Input Vehicle Name  */}
+            <TextInput
+              className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+              onChangeText={setContact}
+              value={contact}
+              placeholder="Vehicle Name & Model"
+              placeholderTextColor="#aaa"
+              keyboardType="text"
+            />
+
             {/* Input Email */}
 
             <TextInput
