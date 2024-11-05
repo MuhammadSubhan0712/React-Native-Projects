@@ -50,14 +50,17 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import Login from './Login'
 import AdminPanel from './Admin'
+import Users from './Users'
 
 const Home = () => {
   return (
     
-    <View>
-    <Login/>
-    </View>
-    // <AdminPanel/>
+
+    <Users/>
+    // <View>
+    // <Login/>
+    // </View>
+    // // <AdminPanel/>
 
 
   )
