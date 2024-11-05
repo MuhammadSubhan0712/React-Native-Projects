@@ -14,6 +14,8 @@ import { Link, useNavigation } from "expo-router";
 
 const RegisterDriver = () => {
   const [username, setUsername] = useState("");
+  const [contact, setContact] = useState<number | null>(null);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigation;
@@ -68,6 +70,25 @@ const RegisterDriver = () => {
               value={username}
               placeholder="Username"
               placeholderTextColor="#aaa"
+            />
+
+               {/* Input Username */}
+               <TextInput
+              className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+              onChangeText={setUsername}
+              value={username}
+              placeholder="Username"
+              placeholderTextColor="#aaa"
+            />
+
+               {/* Input Contact No */}
+            <TextInput
+              className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+              onChangeText={setContact}
+              value={contact}
+              placeholder="Contact No"
+              placeholderTextColor="#aaa"
+              keyboardType="number-pad"
             />
 
             {/* Input Email */}
