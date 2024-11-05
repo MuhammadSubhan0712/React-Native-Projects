@@ -15,9 +15,9 @@ import { Link, useNavigation } from "expo-router";
 const RegisterDriver = () => {
   const [username, setUsername] = useState<string>("");
   const [contact, setContact] = useState<number | null>(null);
-  const [vehicleReg, setvehicleReg] = useState<number | null>(null);
+  const [vehicleReg, setvehicleReg] = useState<string | null>(null);
   const [vehicleName, setvehicleName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  const [email, setEmail] = useState<string>("");     
   const [password, setPassword] = useState<string>("");
   const [imageUri, setImageUri] = useState<string | null>(null);
 
@@ -74,8 +74,8 @@ const RegisterDriver = () => {
               placeholderTextColor="#aaa"
             />
 
-               {/* Input Username */}
-               <TextInput
+            {/* Input Username */}
+            <TextInput
               className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
               onChangeText={setUsername}
               value={username}
@@ -83,7 +83,7 @@ const RegisterDriver = () => {
               placeholderTextColor="#aaa"
             />
 
-               {/* Input Contact No */}
+            {/* Input Contact No */}
             <TextInput
               className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
               onChangeText={setContact}
@@ -93,9 +93,8 @@ const RegisterDriver = () => {
               keyboardType="number-pad"
             />
 
-
-     {/* Input Vehicle Registration No */}
-     <TextInput
+            {/* Input Vehicle Registration No */}
+            <TextInput
               className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
               onChangeText={setvehicleReg}
               value={vehicleReg}
@@ -103,8 +102,6 @@ const RegisterDriver = () => {
               placeholderTextColor="#aaa"
               keyboardType="text"
             />
-
-
 
             {/* Input Vehicle Name  */}
             <TextInput
@@ -142,7 +139,7 @@ const RegisterDriver = () => {
 
             {imageUri ? (
               <Image
-              className='mt-3 w-full h-full border-r-0'
+                className="mt-3 w-full h-full border-r-0"
                 source={{ uri: imageUri }}
                 style={{
                   marginTop: 10,
@@ -156,7 +153,7 @@ const RegisterDriver = () => {
                 <View
                   style={{
                     marginTop: 10,
-                    padding:10,
+                    padding: 10,
                     width: 100,
                     height: 100,
                     borderRadius: 50,
@@ -165,7 +162,12 @@ const RegisterDriver = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}>
-                  <Text style={{ color: "white", fontWeight: "bold" , fontSize: 16 }}>
+                  <Text
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: 16,
+                    }}>
                     Upload Your Image
                   </Text>
                 </View>

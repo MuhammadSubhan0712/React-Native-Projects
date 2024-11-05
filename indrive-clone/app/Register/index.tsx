@@ -13,11 +13,11 @@ import { launchImageLibrary } from "react-native-image-picker";
 import { Link, useNavigation } from "expo-router";
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const navigate = useNavigation();
-  const [imageUri, setImageUri] = useState(null);
+  const [imageUri, setImageUri] = useState<string | null>(null);
 
   const toLogin = () => {
     navigate("../Login");
