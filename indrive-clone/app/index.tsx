@@ -54,10 +54,10 @@ import AdminPanel from './Admin'
 const Home = () => {
   return (
     
-    // <View>
-    // <Login/>
-    // </View>
-    <AdminPanel/>
+    <View>
+    <Login/>
+    </View>
+    // <AdminPanel/>
 
 
   )

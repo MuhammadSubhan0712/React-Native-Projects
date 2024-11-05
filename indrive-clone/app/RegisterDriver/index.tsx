@@ -12,11 +12,11 @@ import { LinearGradient } from "expo-linear-gradient";
 import { launchImageLibrary } from "react-native-image-picker";
 import { Link, useNavigation } from "expo-router";
 
-const Register = () => {
+const RegisterDriver = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigation();
+  const navigate = useNavigation;
   const [imageUri, setImageUri] = useState(null);
 
   const toLogin = () => {
@@ -146,4 +146,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterDriver;
