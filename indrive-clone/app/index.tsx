@@ -4,16 +4,18 @@ import Login from './Login'
 import AdminPanel from './AdminPanel'
 import Users from './Users'
 import RegisterDriver from './RegisterDriver'
+import RideBooking from './Booking'
 
 const Home = () => {
   return (
     
-<RegisterDriver/>
+// {/* <RegisterDriver/> */}
     // <Users/>
     // <View>
     // <Login/>
     // </View>
     // // <AdminPanel/>
+    <RideBooking/>
 
 
   )
