@@ -14,9 +14,10 @@ import { Link, useNavigation } from "expo-router";
 
 const Register = () => {
   const [username, setUsername] = useState<string>("");
+  const [contactno, setContactno] = useState<number | null>(null);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const navigate = useNavigation();
+  const navigate = useNavigation;
   const [imageUri, setImageUri] = useState<string | null>(null);
 
   const toLogin = () => {
@@ -69,6 +70,15 @@ const Register = () => {
               placeholder="Username"
               placeholderTextColor="#aaa"
             />
+            {/* Input Contact no */}
+            <TextInput
+              className="h-12 px-4 rounded-lg bg-gray-100 mb-4 shadow-md shadow-gray-500 text-base text-gray-800"
+              onChangeText={setContactno}
+              value={contactno}
+              placeholder="Contact No"
+              placeholderTextColor="#aaa"
+              keyboardType="number-pad"
+            />
 
             {/* Input Email */}
 
@@ -96,7 +106,7 @@ const Register = () => {
 
             {imageUri ? (
               <Image
-              className='mt-3 w-full h-full border-r-0'
+                className="mt-3 w-full h-full border-r-0"
                 source={{ uri: imageUri }}
                 style={{
                   marginTop: 10,
@@ -110,7 +120,7 @@ const Register = () => {
                 <View
                   style={{
                     marginTop: 10,
-                    padding:10,
+                    padding: 10,
                     width: 100,
                     height: 100,
                     borderRadius: 50,
@@ -119,7 +129,12 @@ const Register = () => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}>
-                  <Text style={{ color: "white", fontWeight: "bold" , fontSize: 16 }}>
+                  <Text
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: 16,
+                    }}>
                     Upload Your Image
                   </Text>
                 </View>

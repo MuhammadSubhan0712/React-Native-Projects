@@ -1,104 +1,123 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Login from './Login'
-import AdminPanel from './AdminPanel'
-import Users from './Users'
-import RegisterDriver from './RegisterDriver'
-import RideBooking from './Booking'
+// import { View, Text } from 'react-native'
+// import React from 'react'
+// import Login from './Login'
+// import AdminPanel from './AdminPanel'
+// import Users from './Users'
+// import RegisterDriver from './RegisterDriver'
+// import RideBooking from './Booking'
 
-const Home = () => {
-  return (
-    
-// {/* <RegisterDriver/> */}
-    // <Users/>
-    // <View>
-    // <Login/>
-    // </View>
-    // // <AdminPanel/>
-    <RideBooking/>
-
-
-  )
-}
-
-export default Home
-
-
-
-
-
-
-
-
-// import { useState, useEffect } from 'react';
-// import { Platform, Text, View, StyleSheet } from 'react-native';
-// import MapView, { Marker } from 'react-native-maps';
-// import * as Location from 'expo-location';//Is line mein hum expo-location se location-related functions ko import kar rahe hain, jo location permissions aur current location lene mein madad karte hain.
-
-// export default function App() {
-//   const [location, setLocation] = useState<null | any>(null);
-//   const [errorMsg, setErrorMsg] = useState<null | string>(null);
-
-//   useEffect(() => {
-//     (async () => {
-
-//       let { status } = await Location.requestForegroundPermissionsAsync();//Yahan hum location permission ke liye request kar rahe hain aur response mein status le rahe hain.
-//       if (status !== 'granted') {
-//         setErrorMsg('Permission to access location was denied');
-//         return;
-//       }
-
-//       let location = await Location.getCurrentPositionAsync({}); //Yeh line current location ko retrieve kar rahi hai.
-//       setLocation(location);
-//       console.log(location);
-
-//     })();
-//   }, []);
-
-
-//   let text = 'Waiting..';
-//   if (errorMsg) {
-//     text = errorMsg;
-//   } else if (location) {
-//     text = JSON.stringify(location);//Agar location mili, to text ko location data ko string mein convert karke assign kiya ja raha hai.
-//   }
-
+// const Home = () => {
 //   return (
-//     <View style={styles.container}>
-//       <Text style={styles.paragraph}>{text}</Text>
-//       {location && <MapView style={styles.map} initialRegion={{
-//         latitude: location.coords.latitude,
-//         // Yahan hum initialRegion define kar rahe hain jo map ke initial latitude aur longitude set karta hai.
-//         longitude: location.coords.longitude,
-//         latitudeDelta: 0.0001,
-//         // Yeh map zoom level ko set kar raha hai.
-//         longitudeDelta: 0.0001,
-//       }}>
-//         <Marker coordinate={{
-//           latitude: location.coords.latitude,
-//           // Yahan hum Marker component ko render kar rahe hain, jo current location par point karega.
-//           longitude: location.coords.longitude,
-//         }} />
+    
+// <>
 
-//       </MapView>}
-//     </View>
-//   );
+// </>
+
+
+// // {/* <RegisterDriver/> */}
+//     // <Users/>
+//     // <View>
+//     // <Login/>
+//     // </View>
+//     // // <AdminPanel/>
+//     // <RideBooking/>
+
+
+//   )
 // }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     padding: 20,
-//     backgroundColor: 'lightblue'
-//   },
-//   paragraph: {
-//     fontSize: 18,
-//     textAlign: 'center',
-//   },
-//   map: {
-//     width: '100%',
-//     height: '80%'
-//   }
-// });
+// export default Home
+
+
+
+
+import { useCallback, useEffect, useState } from 'react';
+import { Animated, Text, View , StyleSheet} from 'react-native';
+import Entypo from '@expo/vector-icons/Entypo';
+import * as SplashScreen from 'expo-splash-screen';
+import * as Font from 'expo-font';
+import { LinearGradient } from 'expo-linear-gradient';
+
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
+
+export default function App() {
+  const [appIsReady, setAppIsReady] = useState(false);
+  const scaleAnim = new Animated.Value(0.8);
+
+  useEffect(() => {
+    Animated.spring(scaleAnim, {
+      toValue: 1,
+      friction: 1,
+      useNativeDriver: true,
+    }).start();
+    async function prepare() {
+      try {
+        // Pre-load fonts, make any API calls you need to do here
+        await Font.loadAsync(Entypo.font);
+        // Artificially delay for two seconds to simulate a slow loading
+        // experience. Please remove this if you copy and paste the code!
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        // Tell the application to render
+        setAppIsReady(true);
+      }
+    }
+
+    prepare();
+    
+  }, []);
+
+  const onLayoutRootView = useCallback(async () => {
+    if (appIsReady) {
+      // This tells the splash screen to hide immediately! If we call this after
+      // `setAppIsReady`, then we may see a blank screen while the app is
+      // loading its initial state and rendering its first pixels. So instead,
+      // we hide the splash screen once we know the root view has already
+      // performed layout.
+      await SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);
+
+  if (!appIsReady) {
+    return null;
+  }
+
+  return (
+    <View  style={styles.container} className='bg-[] justify-center items-center'>
+    <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+      <Text style={styles.title}>Welcome to InDrive</Text>
+      <View className='justify-between items-center'>
+      <Entypo className='text-cyan-800' name="rocket" size={80} color="white" />
+      <Entypo name="drive" size={80} color="white" />
+      </View>
+    </Animated.View>
+ </View>
+  );
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor:'#800000'
+  },
+  title: {
+    fontSize: 36,
+    fontWeight: 'bold',
+    color: '#00ecff',
+    marginBottom: 20,
+    // textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
+  },
+  icon: {
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 10,
+ 
+  },
+});
+
