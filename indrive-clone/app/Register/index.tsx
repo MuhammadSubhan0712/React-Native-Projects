@@ -6,11 +6,14 @@ import {
   View,
   Image,
   ScrollView,
+  Alert,
 } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { launchImageLibrary } from "react-native-image-picker";
 import { Link, useNavigation } from "expo-router";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const Register = () => {
   const [username, setUsername] = useState<string>("");
@@ -20,7 +23,30 @@ const Register = () => {
   const navigate = useNavigation;
   const [imageUri, setImageUri] = useState<string | null>(null);
 
+
+
+
   const toLogin = () => {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth , email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        Alert.alert(
+          "Signed In",
+          "Welcome back! You've successfully signed in.",
+          [
+            {
+              text: "OK",
+              onPress: () => console.log("OK Pressed"),
+            },
+          ]
+        );
+      console.log("User Registered Succesfully");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log("Erorr ==> ",errorMessage);
+      });  
     navigate("../Login");
   };
 
