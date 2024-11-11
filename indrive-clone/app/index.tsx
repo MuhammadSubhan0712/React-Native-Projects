@@ -3,31 +3,27 @@ import { View, Text } from 'react-native'
 // import Login from './Login'
 // import AdminPanel from './AdminPanel'
 import Users from './Users'
+import CustomerInfo from './Customers'
 // import RegisterDriver from './RegisterDriver'
 // import RideBooking from './Booking'
 
 const Home = () => {
   return (
-    
 <>
-<Users/>
+{/* <Users/> */}
+<CustomerInfo/>
+{/* <RideBooking/> */}
+{/* <RegisterDriver/> */}
+ {/* <Login/> */}
+ {/* <AdminPanel/> */}
 </>
-
-
-// // {/* <RegisterDriver/> */}
-//     // <View>
-//     // <Login/>
-//     // </View>
-//     // // <AdminPanel/>
-//     // <RideBooking/>
-
   )
 }
 
 export default Home
 
 
-
+{/* 
 
 // import { useCallback, useEffect, useState } from 'react';
 // import { Animated, Text, View , StyleSheet} from 'react-native';
@@ -114,5 +110,5 @@ export default Home
 //     textShadowOffset: { width: -1, height: 1 },
 //     textShadowRadius: 10,
 //   },
-// });
+// }); */}
 

@@ -28,6 +28,7 @@ const RegisterDriver = () => {
   const [isModalVisible, setModalVisible] = useState(false);
   const navigate = useNavigation;
 
+  
   const toLogin = () => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
@@ -35,12 +36,12 @@ const RegisterDriver = () => {
         const user = userCredential.user;
         console.log("User Registered Succesfully");
         setModalVisible(true);
+        navigate("../Login");
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log("Erorr ==> ", errorMessage);
       });
-    navigate("../Login");
   };
 
   const closeModal = () => {
@@ -195,7 +196,7 @@ const RegisterDriver = () => {
             )}
 
             <TouchableOpacity
-              onPress={() => toLogin}
+              onPress={toLogin}
               className="bg-green-700 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
               <Text className="text-lg font-semibold text-white text-center">
                 Sign Up

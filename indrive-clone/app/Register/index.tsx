@@ -19,7 +19,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
   const [username, setUsername] = useState<string>("");
-  const [contactno, setContactno] = useState<number | string>("");
+  const [contactno, setContactno] = useState<number>();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigation;
@@ -33,12 +33,12 @@ const Register = () => {
         const user = userCredential.user;
         console.log("User Registered Succesfully" , user);
         setModalVisible(true);
+        navigate("../Login");
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log("Erorr ==> ", errorMessage);
       });
-      navigate("../Login");
   };
 
   const closeModal = () => {
@@ -168,7 +168,7 @@ const Register = () => {
             )}
 
             <TouchableOpacity
-              onPress={() => toLogin}
+              onPress={toLogin}
               className="bg-green-700 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
               <Text className="text-lg font-semibold text-white text-center">
                 Sign Up
