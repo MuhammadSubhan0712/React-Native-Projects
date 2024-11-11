@@ -19,26 +19,26 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const Register = () => {
   const [username, setUsername] = useState<string>("");
-  const [contactno, setContactno] = useState<number | null>(null);
+  const [contactno, setContactno] = useState<number | string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigation;
   const [imageUri, setImageUri] = useState<string | null>(null);
-  const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState<boolean>(false);
+  const auth = getAuth();
 
   const toLogin = () => {
-    const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("User Registered Succesfully");
+        console.log("User Registered Succesfully" , user);
         setModalVisible(true);
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log("Erorr ==> ", errorMessage);
       });
-    navigate("../Login");
+      navigate("../Login");
   };
 
   const closeModal = () => {
@@ -53,7 +53,13 @@ const Register = () => {
       (response) => {
         if (response.didCancel) {
           console.log("User cancelled image picker");
+          Alert.alert(
+          "You cancelled image picker"
+          );
         } else if (response.errorMessage) {
+          Alert.alert(
+            "ImagePicker Error:",response.errorMessage
+            );
           console.log("ImagePicker Error: ", response.errorMessage);
         } else if (response.assets && response.assets[0].uri) {
           setImageUri(response.assets[0].uri);
@@ -155,7 +161,7 @@ const Register = () => {
                       fontWeight: "bold",
                       fontSize: 16,
                     }}>
-                    Upload Your Image
+                    Upload Image
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -163,7 +169,7 @@ const Register = () => {
 
             <TouchableOpacity
               onPress={() => toLogin}
-              className="bg-green-500 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
+              className="bg-green-700 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
               <Text className="text-lg font-semibold text-white text-center">
                 Sign Up
               </Text>

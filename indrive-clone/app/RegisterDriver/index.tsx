@@ -188,7 +188,7 @@ const RegisterDriver = () => {
                       fontWeight: "bold",
                       fontSize: 16,
                     }}>
-                    Upload Your Image
+                    Upload Image
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -196,7 +196,7 @@ const RegisterDriver = () => {
 
             <TouchableOpacity
               onPress={() => toLogin}
-              className="bg-green-500 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
+              className="bg-green-700 mt-4 py-3 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
               <Text className="text-lg font-semibold text-white text-center">
                 Sign Up
               </Text>
