@@ -6,11 +6,15 @@ import {
   View,
   Image,
   ScrollView,
+  Button,
 } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { launchImageLibrary } from "react-native-image-picker";
 import { Link, useNavigation } from "expo-router";
+import Modal from "react-native-modal";
+import { MaterialIcons } from "@expo/vector-icons";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const RegisterDriver = () => {
   const [drivername, setdrivername] = useState<string>("");
@@ -21,11 +25,26 @@ const RegisterDriver = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [imageUri, setImageUri] = useState<string | null>(null);
-
+  const [isModalVisible, setModalVisible] = useState(false);
   const navigate = useNavigation;
 
   const toLogin = () => {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User Registered Succesfully");
+        setModalVisible(true);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log("Erorr ==> ", errorMessage);
+      });
     navigate("../Login");
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
   };
 
   const selectImage = () => {
@@ -182,6 +201,17 @@ const RegisterDriver = () => {
                 Sign Up
               </Text>
             </TouchableOpacity>
+
+            {/* Modal Component */}
+            <Modal isVisible={isModalVisible} onBackdropPress={closeModal}>
+              <View className="bg-white p-6 rounded-lg items-center">
+                <MaterialIcons name="check-circle" size={60} color="green" />
+                <Text className="text-xl font-bold text-green-700 mt-3">
+                  Registration Successful!
+                </Text>
+                <Button title="OK" onPress={closeModal} />
+              </View>
+            </Modal>
 
             <Link href={"/Login"} className="mt-4  py-3  hover:text-cyan-300">
               <Text className="text-lg font-bold text-cyan-700 text-center">

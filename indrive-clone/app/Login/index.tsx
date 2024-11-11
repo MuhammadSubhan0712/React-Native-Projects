@@ -3,7 +3,7 @@ import { TextInput, Text, TouchableOpacity, Image, View } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, useNavigation } from "expo-router";
-
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -11,6 +11,20 @@ const Login = () => {
 
 const ToAdmin = () => {
   navigate('../Admin')
+}
+const ToBooking = () => {
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    console.log("User =>",user);
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+    console.log("Error ==>",errorMessage);
+    
+  });
+  navigate('../Booking')
 }
   return (
     <SafeAreaProvider>
@@ -55,13 +69,13 @@ const ToAdmin = () => {
 
           {/* Login Button */}
 
-          <TouchableOpacity className="bg-green-600 mt-4 py-2 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
+          <TouchableOpacity onPress={() => ToBooking()} className="bg-green-600 mt-4 py-2 rounded-lg shadow-lg shadow-green-900 active:bg-green-700">
             <Text className="text-lg font-semibold text-black text-center">
               Log In
             </Text>
           </TouchableOpacity>
 
-          <Link href={"/Register"} className="mt-4  py-3 hover:text-cyan-300">
+          <Link href={"/Register"} className="mt-4 py-3 hover:text-cyan-300">
             <Text className="text-lg font-bold text-cyan-700 text-center">
               Don't have an account
             </Text>

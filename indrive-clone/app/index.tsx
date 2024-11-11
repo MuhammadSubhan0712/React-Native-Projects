@@ -2,7 +2,7 @@
 // import React from 'react'
 // import Login from './Login'
 // import AdminPanel from './AdminPanel'
-// import Users from './Users'
+import Users from './Users'
 // import RegisterDriver from './RegisterDriver'
 // import RideBooking from './Booking'
 
@@ -15,7 +15,7 @@
 
 
 // // {/* <RegisterDriver/> */}
-//     // <Users/>
+
 //     // <View>
 //     // <Login/>
 //     // </View>
@@ -84,7 +84,7 @@ export default function App() {
   if (!appIsReady) {
     return null;
   }
-
+    <Users/>
   return (
     <View  style={styles.container} className='bg-[] justify-center items-center'>
     <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
