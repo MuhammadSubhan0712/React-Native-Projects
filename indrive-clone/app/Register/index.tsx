@@ -33,7 +33,7 @@ const Register = () => {
         const user = userCredential.user;
         Alert.alert(
           "Signed In",
-          "Welcome back! You've successfully signed in.",
+          "Welcome You've successfully signed in.",
           [
             {
               text: "OK",
