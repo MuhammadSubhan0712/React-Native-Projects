@@ -7,13 +7,15 @@ import {
   Image,
   ScrollView,
   Alert,
+  Button,
 } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { launchImageLibrary } from "react-native-image-picker";
 import { Link, useNavigation } from "expo-router";
+import Modal from "react-native-modal";
+import { MaterialIcons } from "@expo/vector-icons";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
 
 const Register = () => {
   const [username, setUsername] = useState<string>("");
@@ -22,34 +24,26 @@ const Register = () => {
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigation;
   const [imageUri, setImageUri] = useState<string | null>(null);
-
-
-
+  const [isModalVisible, setModalVisible] = useState(false);
 
   const toLogin = () => {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth , email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        Alert.alert(
-          "Signed In",
-          "Welcome You've successfully signed in.",
-          [
-            {
-              text: "OK",
-              onPress: () => console.log("OK Pressed"),
-            },
-          ]
-        );
-      console.log("User Registered Succesfully");
+        console.log("User Registered Succesfully");
+        setModalVisible(true);
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log("Erorr ==> ",errorMessage);
-      });  
+        console.log("Erorr ==> ", errorMessage);
+      });
     navigate("../Login");
   };
 
+  const closeModal = () => {
+    setModalVisible(false);
+  };
   const selectImage = () => {
     launchImageLibrary(
       {
@@ -175,6 +169,16 @@ const Register = () => {
               </Text>
             </TouchableOpacity>
 
+            {/* Modal Component */}
+            <Modal isVisible={isModalVisible} onBackdropPress={closeModal}>
+              <View className="bg-white p-6 rounded-lg items-center">
+                <MaterialIcons name="check-circle" size={60} color="green" />
+                <Text className="text-xl font-bold text-green-700 mt-3">
+                  Registration Successful!
+                </Text>
+                <Button title="OK" onPress={closeModal} />
+              </View>
+            </Modal>
             <Link href={"/Login"} className="mt-4  py-3  hover:text-cyan-300">
               <Text className="text-lg font-bold text-cyan-700 text-center">
                 Already have a account
