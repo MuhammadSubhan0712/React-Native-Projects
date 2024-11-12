@@ -1,12 +1,21 @@
 import { View, Text,TouchableOpacity ,  ScrollView, SafeAreaView } from "react-native";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Link } from "expo-router";
+import { Link , router, useRouter } from "expo-router";
 
 const Users = () => {
+  const router = useRouter();
+
+
+  const toDriver = () => {
+    router.push('/RegisterDriver')
+  }
+  const toPassenger = () => {
+    router.push('/Register')
+  }
   return (
     <ScrollView className="bg-[#c1f11d]">
-    
+  
       <SafeAreaProvider >
         <SafeAreaView>
 
@@ -16,22 +25,18 @@ const Users = () => {
             😊 Greetings and Welcome 😊
             </Text>
           </View>
-          <TouchableOpacity className="bg-[#009325a2] my-3 justify-center items-center mx- p-4 border rounded-3xl shadow-lg border-blue-600">
+          <TouchableOpacity onPress={toDriver} className="bg-[#009325a2] my-3 justify-center items-center mx- p-4 border rounded-3xl shadow-lg border-blue-600">
           {/* Register as a Driver */}
-            <Link href={"../RegisterDriver"}>
                 <Text className="text-2xl text-white font-bold">
                 Register For Driver
                 </Text>
-            </Link>
             </TouchableOpacity>
             
           {/* Register as a Passenger */}
-          <TouchableOpacity className="bg-[#009325a2] my-3 justify-center items-center mx- p-4 border rounded-3xl shadow-lg border-blue-600">
-            <Link href={"../Register"}>
+          <TouchableOpacity onPress={toPassenger} className="bg-[#009325a2] my-3 justify-center items-center mx- p-4 border rounded-3xl shadow-lg border-blue-600">
                 <Text className="text-2xl text-white font-bold">
                 Register For Passenger                  
                 </Text>
-            </Link>
             </TouchableOpacity>
         </SafeAreaView>
       </SafeAreaProvider>

@@ -6,14 +6,13 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
+  ScrollView,
   Alert,
 } from "react-native";
 import MapView, { Marker, Polyline } from "react-native-maps";
 import * as Location from "expo-location";
 import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
-
 
 interface SinglePlace {
     latitude: number;
@@ -107,6 +106,8 @@ const findDriver = () => {
 
 
   return (
+    <ScrollView>
+
     <View className="flex justify-center items-center p-5 bg-zinc-200">
       <TextInput
         className="h-40 w-1/5 m-6 p-5 border-spacing-x-1"
@@ -178,20 +179,21 @@ const findDriver = () => {
             <Text>Direction</Text>
           </TouchableOpacity>
         </MapView>
+        
       )}
 
     {/* ---------------------------------------------------------------- */}
         <View className="flex-row justify-around p-3 bg-gray-100">
         <TouchableOpacity>
-          <FontAwesome name="car" size={24} color="black" />
+          <FontAwesome name="car" size={24} color="red" />
           <Text className="text-center">Standard</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <FontAwesome name="taxi" size={24} color="black" />
+          <FontAwesome name="taxi" size={24} color="yellow" />
           <Text className="text-center">Normal</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <FontAwesome name="motorcycle" size={24} color="black" />
+          <FontAwesome name="motorcycle" size={24} color="blue" />
           <Text className="text-center">Moto</Text>
         </TouchableOpacity>
       </View>
@@ -199,11 +201,12 @@ const findDriver = () => {
     <View>
       <TouchableOpacity
         onPress={findDriver}
-        className="bg-blue-500 p-4 rounded-full m-4">
-        <Text className="text-center text-white text-lg font-bold">Find Driver</Text>
+        className="bg-[#c1f11d] p-4 rounded-full m-4">
+        <Text className="text-center text-black text-lg font-bold">Find Driver</Text>
       </TouchableOpacity>
     </View>
     </View>
+    </ScrollView>
   );
 }
 

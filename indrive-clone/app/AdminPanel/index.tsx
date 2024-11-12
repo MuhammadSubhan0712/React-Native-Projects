@@ -1,11 +1,12 @@
 import { View, Text, ScrollView, FlatList, Image } from 'react-native';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 
 const AdminPanel = () => {
+  const router = useRouter();
   const DATA = [
-    { id: '1', title: 'Driver Management', imageUrl: 'https://img.freepik.com/premium-vector/driver-vector-logo-design_410429-4782.jpg?semt=ais_hybrid' },
+    { id: '1', title: 'Driver Management', imageUrl: 'https://img.freepik.com/premium-vector/driver-vector-logo-design_410429-4782.jpg?semt=ais_hybrid'},
     { id: '2', title: 'Customer Profiles', imageUrl: 'https://cdn0.iconfinder.com/data/icons/design-and-usability/64/client_service_icon_staff_customer_support_user_profile-512.png' },
     { id: '3', title: 'Trip Management', imageUrl: 'https://thumbs.dreamstime.com/b/car-logo-illustration-art-background-46721370.jpg' },
     { id: '4', title: 'Reports & Analytics', imageUrl: 'https://cdn-icons-png.flaticon.com/512/1478/1478892.png' },
@@ -16,7 +17,6 @@ const AdminPanel = () => {
     title : string , 
     id : number,
     imageUrl: string,
-
   }
 
   const Item = ({ title, imageUrl }:items)  => (
@@ -39,11 +39,11 @@ const AdminPanel = () => {
           <View className="flex-row justify-around mt-4 mb-6">
             <View className="bg-blue-900 p-4 rounded-lg shadow-lg w-40">
               <Text className="text-white text-lg">Total Drivers</Text>
-              <Text className="text-white text-2xl font-bold">120</Text>
+              <Text className="text-white text-2xl font-bold">20</Text>
             </View>
             <View className="bg-green-800 p-4 rounded-lg shadow-lg w-40">
               <Text className="text-white text-lg">Total Customers</Text>
-              <Text className="text-white text-2xl font-bold">350</Text>
+              <Text className="text-white text-2xl font-bold">50</Text>
             </View>
           </View>
 

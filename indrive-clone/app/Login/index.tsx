@@ -12,14 +12,18 @@ let Login = () => {
   const auth = getAuth();
 
 const ToAdmin = () => {
-  router.push('../Admin')
+  router.push('/AdminPanel')
 }
 const ToBooking = () => {
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
-    console.log("User =>",user);
-    router.push('../Booking')
+     if (user.uid === 'a9oICPSMSaSCNHCmJfYQouFk7ax2') {
+      router.push("/AdminPanel");
+    }
+    else {
+      router.push("/Booking");
+    }
   })
   .catch((error) => {
     const errorMessage = error.message;

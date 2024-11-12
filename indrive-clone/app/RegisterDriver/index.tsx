@@ -36,7 +36,6 @@ const RegisterDriver = () => {
         const user = userCredential.user;
         console.log("User Registered Succesfully");
         setModalVisible(true);
-        router.push('../Login')
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -46,25 +45,26 @@ const RegisterDriver = () => {
 
   const closeModal = () => {
     setModalVisible(false);
+    router.push('../Login')
   };
 
-  const selectImage = () => {
-    launchImageLibrary(
-      {
-        mediaType: "photo",
-        quality: 1,
-      },
-      (response) => {
-        if (response.didCancel) {
-          console.log("User cancelled image picker");
-        } else if (response.errorMessage) {
-          console.log("ImagePicker Error: ", response.errorMessage);
-        } else if (response.assets && response.assets[0].uri) {
-          setImageUri(response.assets[0].uri);
-        }
-      }
-    );
-  };
+  // const selectImage = () => {
+  //   launchImageLibrary(
+  //     {
+  //       mediaType: "photo",
+  //       quality: 1,
+  //     },
+  //     (response) => {
+  //       if (response.didCancel) {
+  //         console.log("User cancelled image picker");
+  //       } else if (response.errorMessage) {
+  //         console.log("ImagePicker Error: ", response.errorMessage);
+  //       } else if (response.assets && response.assets[0].uri) {
+  //         setImageUri(response.assets[0].uri);
+  //       }
+  //     }
+  //   );
+  // };
 
   return (
     <ScrollView>
@@ -158,7 +158,7 @@ const RegisterDriver = () => {
 
             {/* Input User Image */}
 
-            {imageUri ? (
+            {/* {imageUri ? (
               <Image
                 className="mt-3 w-full h-full border-r-0"
                 source={{ uri: imageUri }}
@@ -193,7 +193,7 @@ const RegisterDriver = () => {
                   </Text>
                 </View>
               </TouchableOpacity>
-            )}
+            )} */}
 
             <TouchableOpacity
               onPress={toLogin}

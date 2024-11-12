@@ -33,7 +33,6 @@ const Register = () => {
         const user = userCredential.user;
         console.log("User Registered Succesfully" , user);
         setModalVisible(true);
-        router.push("../Login");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -43,37 +42,38 @@ const Register = () => {
 
   const closeModal = () => {
     setModalVisible(false);
+    router.push("../Login");
   };
-  const selectImage = () => {
-    launchImageLibrary(
-      {
-        mediaType: "photo",
-        quality: 1,
-      },
-      (response) => {
-        if (response.didCancel) {
-          console.log("User cancelled image picker");
-          Alert.alert(
-          "You cancelled image picker"
-          );
-        } else if (response.errorMessage) {
-          Alert.alert(
-            "ImagePicker Error:",response.errorMessage
-            );
-          console.log("ImagePicker Error: ", response.errorMessage);
-        } else if (response.assets && response.assets[0].uri) {
-          setImageUri(response.assets[0].uri);
-        }
-      }
-    );
-  };
+  // const selectImage = () => {
+  //   launchImageLibrary(
+  //     {
+  //       mediaType: "photo",
+  //       quality: 1,
+  //     },
+  //     (response) => {
+  //       if (response.didCancel) {
+  //         console.log("User cancelled image picker");
+  //         Alert.alert(
+  //         "You cancelled image picker"
+  //         );
+  //       } else if (response.errorMessage) {
+  //         Alert.alert(
+  //           "ImagePicker Error:",response.errorMessage
+  //           );
+  //         console.log("ImagePicker Error: ", response.errorMessage);
+  //       } else if (response.assets && response.assets[0].uri) {
+  //         setImageUri(response.assets[0].uri);
+  //       }
+  //     }
+  //   );
+  // };
 
   return (
     <ScrollView>
       <SafeAreaProvider>
         <LinearGradient
           colors={["#c1f11d", "#00db24"]}
-          className="flex-1 items-center justify-center">
+          className="flex-1 items-center justify-center h-full">
           <SafeAreaView className="w-11/12 bg-white p-5 rounded-2xl shadow-lg shadow-black border border-gray-300">
             <View className="flex items-center mt-2 mb-5">
               <Image
@@ -130,7 +130,7 @@ const Register = () => {
 
             {/* Input User Image */}
 
-            {imageUri ? (
+            {/* {imageUri ? (
               <Image
                 className="mt-3 w-full h-full border-r-0"
                 source={{ uri: imageUri }}
@@ -165,7 +165,7 @@ const Register = () => {
                   </Text>
                 </View>
               </TouchableOpacity>
-            )}
+            )} */}
 
             <TouchableOpacity
               onPress={toLogin}
@@ -185,6 +185,8 @@ const Register = () => {
                 <Button title="OK" onPress={closeModal} />
               </View>
             </Modal>
+
+            {/* Already have a account */}
             <Link href={"/Login"} className="mt-4  py-3  hover:text-cyan-300">
               <Text className="text-lg font-bold text-cyan-700 text-center">
                 Already have a account
