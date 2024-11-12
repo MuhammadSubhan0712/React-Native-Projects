@@ -11,7 +11,7 @@ import {
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { launchImageLibrary } from "react-native-image-picker";
-import { Link, useNavigation } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import Modal from "react-native-modal";
 import { MaterialIcons } from "@expo/vector-icons";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -26,9 +26,9 @@ const RegisterDriver = () => {
   const [password, setPassword] = useState<string>("");
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [isModalVisible, setModalVisible] = useState(false);
-  const navigate = useNavigation;
+  const router = useRouter();
 
-  
+
   const toLogin = () => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
@@ -36,7 +36,7 @@ const RegisterDriver = () => {
         const user = userCredential.user;
         console.log("User Registered Succesfully");
         setModalVisible(true);
-        navigate("../Login");
+        router.push('../Login')
       })
       .catch((error) => {
         const errorMessage = error.message;

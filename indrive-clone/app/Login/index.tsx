@@ -2,24 +2,24 @@ import React, { useState } from "react";
 import { TextInput, Text, TouchableOpacity, Image, View } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-import { Link, useNavigation } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 let Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const navigate = useNavigation;
+  const router = useRouter();
   const auth = getAuth();
 
 const ToAdmin = () => {
-  navigate('../Admin')
+  router.push('../Admin')
 }
 const ToBooking = () => {
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
     console.log("User =>",user);
-    navigate('../Booking')
+    router.push('../Booking')
   })
   .catch((error) => {
     const errorMessage = error.message;

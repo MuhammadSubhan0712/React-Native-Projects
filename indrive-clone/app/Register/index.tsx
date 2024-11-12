@@ -12,7 +12,7 @@ import {
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
 import { launchImageLibrary } from "react-native-image-picker";
-import { Link, useNavigation } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import Modal from "react-native-modal";
 import { MaterialIcons } from "@expo/vector-icons";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
@@ -22,7 +22,7 @@ const Register = () => {
   const [contactno, setContactno] = useState<number>();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const navigate = useNavigation;
+  const router = useRouter();
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
   const auth = getAuth();
@@ -33,7 +33,7 @@ const Register = () => {
         const user = userCredential.user;
         console.log("User Registered Succesfully" , user);
         setModalVisible(true);
-        navigate("../Login");
+        router.push("../Login");
       })
       .catch((error) => {
         const errorMessage = error.message;
