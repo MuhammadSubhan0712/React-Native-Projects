@@ -25,7 +25,7 @@ interface SinglePlace {
     name: string
   }
 
-export default function RideBooking() {
+ const  RideBooking = (): JSX.Element => {
   const [location, setLocation] = useState<null | any>(null);
   const [errorMsg, setErrorMsg] = useState<null | string>(null);
   const [region, setRegion] = useState<any>(null);
@@ -180,27 +180,6 @@ const findDriver = () => {
         </MapView>
       )}
 
-      {/*  For bottom Navigation: */}
-
-<NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen
-          name="Home"
-          component={RideBookingScreen}
-          options={{
-            tabBarIcon: () => <FontAwesome name="home" size={24} color="black" />,
-          }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={RideBookingScreen}
-          options={{
-            tabBarIcon: () => <FontAwesome name="user" size={24} color="black" />,
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
-
     {/* ---------------------------------------------------------------- */}
         <View className="flex-row justify-around p-3 bg-gray-100">
         <TouchableOpacity>
@@ -228,24 +207,11 @@ const findDriver = () => {
   );
 }
 
+
 const styles = StyleSheet.create({
-  //   container: {
-  //     flex: 1,
-  //     alignItems: 'center',
-  //     justifyContent: 'center',
-  //     padding: 20,
-  //     backgroundColor: 'lightblue'
-  //   },
-  //   paragraph: {
-  //     fontSize: 18,
-  //     textAlign: 'center',
-  //   },
   map: {
     width: "100%",
     height: "50%",
   },
 });
-function createBottomTabNavigator() {
-  throw new Error("Function not implemented.");
-}
-
+export default RideBooking;

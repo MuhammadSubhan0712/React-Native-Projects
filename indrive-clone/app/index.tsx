@@ -6,14 +6,14 @@ import Users from './Users'
 import CustomerInfo from './Customers'
 import Drivers from './Drivers'
 // import RegisterDriver from './RegisterDriver'
-// import RideBooking from './Booking'
+import RideBooking from './Booking'
 
 const Home = () => {
   return (
 <>
-{/* <Users/> */}
+<Users/>
 {/* <CustomerInfo/> */}
-<Drivers/>
+{/* <Drivers/> */}
 {/* <RideBooking/> */}
 {/* <RegisterDriver/> */}
  {/* <Login/> */}
