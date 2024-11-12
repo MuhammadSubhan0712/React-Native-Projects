@@ -4,6 +4,7 @@ import { View, Text } from 'react-native'
 // import AdminPanel from './AdminPanel'
 import Users from './Users'
 import CustomerInfo from './Customers'
+import Drivers from './Drivers'
 // import RegisterDriver from './RegisterDriver'
 // import RideBooking from './Booking'
 
@@ -11,7 +12,8 @@ const Home = () => {
   return (
 <>
 {/* <Users/> */}
-<CustomerInfo/>
+{/* <CustomerInfo/> */}
+<Drivers/>
 {/* <RideBooking/> */}
 {/* <RegisterDriver/> */}
  {/* <Login/> */}
