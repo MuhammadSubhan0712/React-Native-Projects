@@ -1,11 +1,10 @@
 import { View, Text,TouchableOpacity ,  ScrollView, SafeAreaView } from "react-native";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Link , router, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 
 const Users = () => {
   const router = useRouter();
-
 
   const toDriver = () => {
     router.push('/RegisterDriver')

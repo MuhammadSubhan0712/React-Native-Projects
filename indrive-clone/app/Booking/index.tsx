@@ -12,7 +12,7 @@ import {
 import MapView, { Marker, Polyline } from "react-native-maps";
 import * as Location from "expo-location";
 import { FontAwesome } from "@expo/vector-icons";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 interface SinglePlace {
     latitude: number;
@@ -32,8 +32,8 @@ interface SinglePlace {
   const [places, setPlaces] = useState<null | AllPlaces[]>(null);
   const [singlePlace, setSinglePlace] = useState<null | SinglePlace>(null);
   const [direction, setDirection] = useState<boolean>(false);
-  const Tab = createBottomTabNavigator();
-
+  // const Tab = createBottomTabNavigator();
+// 
 
 
   useEffect(() => {
